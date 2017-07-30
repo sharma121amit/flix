@@ -1,0 +1,33 @@
+<h1><%= pluralize(@movies.size, 'Movie') %></h1>
+
+<!-- <p> Checking at <%= Time.now %> </p> -->
+
+<%= link_to("Add New Movie", new_movie_path) %>
+
+<% @movies.each do |movie| %>
+<article>
+	<header>
+		<h2><%= link_to(movie.title, movie_path(movie)) %></h2>
+	</header>
+<table>
+	<tr>
+		<th>Description:</th>
+		<td><%= truncate(movie.description, lenght: 40, separator: ' ') %> </td>
+	</tr>
+	<tr>
+		<th>Released:</th>
+		<!-- <% if movie.released_on %> -->
+		<td><%= movie.released_on.to_s(:release_date) %> (<%= time_ago_in_words(movie.released_on) %> ago) </td>
+		<!-- <% end %> -->
+	</tr>
+	<tr>
+		<th>Rating:</th>
+		<td><%= movie.rating %></td>
+	</tr>
+	<tr>
+		<th>Total Gross:</th>
+		<td><%= format_total_gross(movie) %></td>
+	</tr>
+	</table>
+</article>
+<% end %>
