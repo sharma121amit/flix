@@ -12,7 +12,7 @@ gem 'rails', '~> 5.0.1'
 
 group :development, :test do
 # Use sqlite3 as the database for Active Record
-<<<<<<< HEAD
+#<<<<<<< HEAD
   gem 'sqlite3'
 end
 
@@ -20,10 +20,10 @@ group :production do
   gem "pg"
 end
 
-=======
+#=======
 #gem 'sqlite3'
-gem 'pg', '~>0.18.4'
->>>>>>> b7ccc5eb0fa9d9c5a82c5ef14eec4efcb0413a27
+#gem 'pg', '~>0.18.4'
+#>>>>>>> b7ccc5eb0fa9d9c5a82c5ef14eec4efcb0413a27
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
