@@ -5,9 +5,11 @@
 <%= link_to("Add New Movie", new_movie_path) %>
 
 <% @movies.each do |movie| %>
-<article>
+<article class="movie">
 	<header>
+		<%= image_for(movie) %>
 		<h2><%= link_to(movie.title, movie_path(movie)) %></h2>
+		<h3><%= movie.cast %></h3>
 	</header>
 <table>
 	<tr>
@@ -24,6 +26,10 @@
 		<th>Rating:</th>
 		<td><%= movie.rating %></td>
 	</tr>
+	<tr>
+        <th>Duration:</th>
+        <td><%= movie.duration %></td>
+      </tr>
 	<tr>
 		<th>Total Gross:</th>
 		<td><%= format_total_gross(movie) %></td>
